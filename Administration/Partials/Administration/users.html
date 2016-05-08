@@ -1,0 +1,54 @@
+﻿<div class="container">
+    <div class="sk-circle black " ng-show="isLoading">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+    <div class="table-container" ng-hide="isLoading">
+        <h2><strong>All</strong> users</h2>
+        <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Admin</th>
+                    <th>Teacher</th>
+                    <th>Locations</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>{{user.UserName}} </td>
+                    <td>
+                        <span ng-if="user.isAdmin" class="glyphicon glyphicon-ok" ng-click="deleteRole(user,'Admin')"></span>
+                        <span ng-if="!user.isAdmin" class="glyphicon glyphicon-remove" ng-click="addRole(user,'Admin')"></span>
+                    </td>
+                    <td>
+                        <span ng-if="user.isTeacher" class="glyphicon glyphicon-ok" ng-click="deleteRole(user,'Teacher')"></span>
+                        <span ng-if="!user.isTeacher" class="glyphicon glyphicon-remove" ng-click="addRole(user,'Teacher')"></span>
+                    </td>
+                    <td>
+                        <a class="btn btn-default" href="#/Content/Paths/{{user.UserName}}">Show locations</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="deleteUser(user)">Delete</button>
+                    </td>
+                </tr>
+                <tr ng-if="users.length == 0">
+                    <td colspan="3">
+                        <h1>No users registered !</h1>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿<div ng-contoller="HomeCtrl">
+    <div class="row">
+        <div class="portfolio-items">
+            <div class="col-sm-6 col-md-3 col-lg-3 teacher" ng-repeat="i in [1,2,3,4,5,6]">
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal{{i}}" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4>TrackingSystem</h4>
+                                Teacher
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="img/portfolio/0{{i}}.png" width="400" height="400" class="img-responsive" alt="Project Title">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-3 branding" ng-repeat="i in [7,8]">
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal{{i}}" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4>TrackingSystem</h4>
+                                Authentication
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="img/portfolio/0{{i}}.png" width="400" height="400" class="img-responsive" alt="Project Title">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-3 app" ng-repeat="i in [9]">
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal{{i}}" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4>TrackingSystem</h4>
+                                Administration
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="img/portfolio/0{{i}}.png" width="400" height="400" class="img-responsive" alt="Project Title">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

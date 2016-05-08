@@ -1,0 +1,76 @@
+﻿<div class="container">
+    <div class="section-title center">
+        <h2>Admin<strong>panel</strong></h2>
+        <div class="line">
+            <hr>
+        </div>
+    </div>
+    <div class="admin">
+        <div class="left" ng-controller="RegisterAdminCtrl" ng-hide="!isAdmin">
+            <div ng-include="'../Partials/Administration/userRegister.html'"></div>
+        </div>
+        <div class="left" ng-hide="!isAdmin" ng-controller="GroupCtrl">
+            <div ng-include="'../Partials/Administration/groupSettings.html'"></div>
+        </div>
+        <div class="left down" ng-controller="UsersCtrl" ng-hide="!isAdmin">
+            <div class="">
+                <table id="admin-table" class="table table-striped table-hover ">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Username</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users" ng-click="redirectToUser(user.Id);">
+                            <td ng-click="redirectToImageUpload(user.Id)">
+                                <img width="50px" height="50px" src="{{serverImagePath}}{{user.UserName}}">
+                            </td>
+                            <td>{{user.UserName}}</td>
+                            <td><button ng-click="deleteUser(user)" class="btn btn-default">Delete</button></td>
+                        </tr>
+                        <tr ng-if="users.length == 0">
+                            <td colspan="3">
+                                <h1>No users registered!</h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="left down" ng-hide="!isAdmin" ng-controller="GroupCtrl">
+            <table class="table-hover table table-striped ">
+                <thead>
+                    <tr>
+                        <th class="">Users in group</th>
+                        <th class="">Is in excursion</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr ng-repeat="user in usersInGroup" ng-click="getShedule(user);">
+                        <td class="text-center">
+                            {{user.UserName}}
+                            <br />
+                            <img width="120px" height="120px" src="{{serverImagePath}}{{user.UserName}}" class="img-circle">
+                        </td>
+                        <td class="text-center">
+                            <span ng-hide="!user.IsInExcursion">
+                                Yes
+                            </span>
+                            <span ng-hide="!!user.IsInExcursion">
+                                No
+                            </span>
+                        </td>
+                    </tr>
+                    <tr ng-if="usersInGroup.length == 0 || usersInGroup == null">
+                        <td class="text-left" colspan="3">
+                            <h1>No users in group!</h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

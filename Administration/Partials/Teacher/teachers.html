@@ -1,0 +1,36 @@
+﻿<div class="table-container teacher-section" ng-controller="TeacherCtrl">
+    <div class="sk-circle white" ng-show="isLoading">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+
+    <div class="section-title center" ng-hide="isLoading">
+        <h2>Registered <strong>teachers</strong></h2>
+        <div class="line">
+            <hr>
+        </div>
+    </div>
+    <div id="teachers-carousels" class="owl-carousel owl-theme row">
+        <div class="item" ng-repeat="teacher in teachers" on-last-repeat>
+            <div class="thumbnail">
+                <!--<img alt="..." src="{{teacher.ImageUrl}}" ng-if="!!teacher.ImageUrl" class="img-circle team-img">-->
+                <img alt="..." src="{{serverImagePath}}{{teacher.UserName}}" class="img-circle team-img">
+                <div class="caption">
+                    <h3>{{teacher.UserName}}</h3>
+                    <p></p>
+                    <p>Teacher<br /></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

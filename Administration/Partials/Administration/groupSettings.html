@@ -1,0 +1,45 @@
+﻿<br />
+<br />
+
+<div class="row padding-buffer">
+    <div class="col-md-4 list list-inset slider-border-input">
+        <h6>Min Distance</h6>
+        <label class="item item-input">
+            <input type="text" placeholder="{{min}}" class="form-control"  ng-change="updateSlider(min,max)" ng-model="min">
+        </label>
+    </div>
+
+    <div class="col-md-4 list list-inset slider-border-input">
+        <h6>Current Distance</h6>
+        <span>{{currentDistance}}</span>
+    </div>
+
+    <div class="col-md-4 list list-inset slider-border-input">
+        <h6>Max Distance</h6>
+        <label class="item item-input">
+            <input type="text" placeholder="{{max}}" ng-change="updateSlider(min,max)" class="form-control" ng-model="max">
+        </label>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="list">
+    <div class="item range range-positive">
+        <i class="icon ion-ios-undo-outline"></i>
+        <!--<div slider config="sliderConfig" model="currentDistance" class="cdbl-slider"></div>-->
+        <div id="slider" ng-init="updateSlider(min,max)"></div>
+        <!--<input type="range" name="volume" min="{{min}}" max="{{max}}" value="currentDistance" ng-model="currentDistance">-->
+        <i class="icon ion-ios-redo"></i>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div style="text-align:center">
+    <button class="btn btn-primary" ng-click="changeGroupDistance(currentDistance)">
+        Change the tracking ditance
+    </button>
+</div>

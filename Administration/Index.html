@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="TrackingSystemApp" ng-init="alert(5)">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrackingSystem   </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicons
+        ================================================== -->
+    <link rel="shortcut icon" href="Images/favicon22.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Slider
+        ================================================== -->
+    <!--<link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">-->
+    <link href="/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="/Content/owl.theme.css" rel="stylesheet" />
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
+    <div id="preloader">
+        <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
+    </div>
+    <!-- Navigation
+        ==========================================-->
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="index.html"><i class="glyphicon glyphicon-map-marker"></i> Tracking<strong></strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div ng-controller="LoginCtrl" ng-include="'Partials/User/login.html'" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header id="home" class="text-center section" name="home">
+        <div class="intro-text">
+            <h1 class="wow fadeInDown">Tracking<strong><span class="color">System</span></strong></h1>
+            <p class="wow fadeInDown">safe travel and excursions</p>
+            <a href="#/teachers" class="btn btn-default btn-lg page-scroll wow fadeInUp" data-wow-delay="200ms">To our site</a>
+        </div>
+    </header>
+
+    <div id="teachers" class="teachers text-center section">
+        <div class="container">
+            <div class="container">
+                <div ng-include="'Partials/Teacher/teachers.html'"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="Content" class="Content text-center">
+        <div ng-view>
+        </div>
+    </div>
+    <!-- About Section -->
+    <div id="download-section" class="">
+        <div class="container">
+            <div class="section-title text-center wow fadeInDown">
+                <h2><strong>Download</strong> app</h2>
+                <hr>
+                <div class="clearfix"></div>
+                <p>Better and safer excursions for your kids or grandparents.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 wow fadeInLeft"> <img src="img/about.png" class="img-responsive"> </div>
+                <div class="col-md-6 wow fadeInRight">
+                    <!--<div>
+                        <h4>Apache Cordova</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img height="100px" src="https://cordova.apache.org/static/img/cordova_bot.png" />
+                            </div>
+                            <div class="col-md-8">
+                                <p>Target multiple platforms with one code base</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>-->
+                    <h4>Scan QR Code</h4>
+                    <p>Scan the QR code with your telephone. The left one is for android and the right for microsoft. Download the .apk file and then install it. After that you can enjoy the app!</p>
+                    <div class="space"></div><div class="list-style">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <h4 class="text-center">Android</h4>
+                               <img src="img/android.png" class="qr-code"/>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <h4 class="text-center">Windows Phone</h4>
+                                <img src="img/microsoft.png" class="qr-code" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app-section" class="text-center">
+        <div class="container">
+            <!-- Container -->
+            <div class="section-title wow fadeInDown">
+                <h2>App <strong>Pictures</strong></h2>
+                <hr>
+                <div class="clearfix"></div>
+                <p>The hybrid mobile application is written using Apache Cordova. It can be runned on any mobile platform.</p>
+            </div>
+            <div class="categories">
+                <ul class="cat">
+                    <li>
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">All</a></li>
+                            <li><a href="#" data-filter=".teacher">Teacher</a></li>
+                            <li><a href="#" data-filter=".app">Administration</a></li>
+                            <li><a href="#" data-filter=".branding">Authentication</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div ng-include="'Partials/Home/app.html'"></div>           
+        </div>
+    </div>
+    <!-- Portfolio Modals -->
+    <div ng-include="'Partials/Home/modals.html'"></div>
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="js/contact_me.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDSnvVKeDezT-2rPCZU54WLPBNNzMcA25o'></script>
+
+
+    <script src="/Scripts/lodash.underscore.min.js"></script>
+    <script src="/Scripts/angular/angular.js"></script>
+    <script src="/Scripts/jquery/jquery-ui.js"></script>
+
+    <script src="/Scripts/angular/angular-google-maps.min.js"></script>
+    <script src="/Scripts/angular/angular-route.js"></script>
+    <script src="/Scripts/respond.js"></script>
+    <script src="/Scripts/toastr/toastr.js"></script>
+    <!--<script src="/Scripts/rangeslider.js"></script>-->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script src="/js/app.js"></script>
+
+    <script src="js/directives/ngLastRepeat.js"></script>
+    <script src="js/directives/search.js"></script>
+    <script src="js/directives/slider.js"></script>
+
+    <script src="/js/controllers/HomeCtrl.js"></script>
+    <script src="/js/controllers/LoginCtrl.js"></script>
+    <script src="/js/controllers/RegisterCtrl.js"></script>
+    <script src="/js/controllers/RegisterAdminCtrl.js"></script>
+    <script src="/js/controllers/GroupCtrl.js"></script>
+    <script src="/js/controllers/TeacherCtrl.js"></script>
+    <script src="/js/controllers/UsersCtrl.js"></script>
+    <script src="/js/controllers/PathCtrl.js"></script>
+
+    <script src="/js/services/errorHandler.js"></script>
+    <script src="/js/services/httpRequester.js"></script>
+    <script src="/js/services/notifier.js"></script>
+    <script src="/js/services/objectToQueryString.js"></script>
+    <script src="/js/services/account/auth.js"></script>
+    <script src="/js/services/account/identity.js"></script>
+    <script src="/js/services/account/usersService.js"></script>
+    <script src="/js/services/teacher/teacherService.js"></script>
+    <script src="/js/services/group/groupService.js"></script>
+    <script src="/js/services/paths/pathsService.js"></script>
+</body>
+</html>
