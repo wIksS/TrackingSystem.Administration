@@ -40,28 +40,16 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
     .run(function ($timeout) {
         $(window).load(function () {
             $timeout(function () {
-                $('a.page-scroll').click(function () {
-                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                        var hash = this.hash;
-                        var hashIndex = hash.indexOf('#');
-                        if (hash[hashIndex + 1] == '/') {
-                            hash = hash.replace('/', '');
-                            var newIndex = hash.indexOf('/');
-                            if (newIndex == -1) {
-                                newIndex = hash.length
-                            }
-                            hash = hash.slice(0, newIndex);
-                        }
-                        var target = $(hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        if (target.length) {
-                            $('html,body').animate({
-                                scrollTop: target.offset().top - 40
-                            }, 900);
-                            //return true;
-                        }
+                var interval = setInterval(function () {
+                    var elements = $('a.page-scroll');
+                    if (elements.length > 1) {
+                        addClickEvents();
+                        clearInterval(interval);
                     }
-                });
+                }, 500);
+
+
+                
 
                 $(".section").css('min-height', $(window).height() + "px");
 
@@ -172,3 +160,28 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
 
     })
     .constant('baseUrl', 'http://trackingsystemserverspringconf.apphb.com/');//'http://qrinformation.apphb.com');//http://qrinfo.apphb.com');//'http://localhost:1763');//'http://localhost:6364');//'http://QRInfoSystem.Web.Web.Web.Webserver.apphb.com/');
+
+function addClickEvents() {
+    $('a.page-scroll').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var hash = this.hash;
+            var hashIndex = hash.indexOf('#');
+            if (hash[hashIndex + 1] == '/') {
+                hash = hash.replace('/', '');
+                var newIndex = hash.indexOf('/');
+                if (newIndex == -1) {
+                    newIndex = hash.length
+                }
+                hash = hash.slice(0, newIndex);
+            }
+            var target = $(hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 40
+                }, 900);
+                //return true;
+            }
+        }
+    });
+}
