@@ -42,7 +42,7 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
             $timeout(function () {
                 var interval = setInterval(function () {
                     var elements = $('a.page-scroll');
-                    if (elements.length > 1) {
+                    if (elements.length > 2) {
                         addClickEvents();
                         clearInterval(interval);
                     }
