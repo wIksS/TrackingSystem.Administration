@@ -46,10 +46,7 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
                         addClickEvents();
                         clearInterval(interval);
                     }
-                }, 500);
-
-
-                
+                }, 500);                
 
                 $(".section").css('min-height', $(window).height() + "px");
 
@@ -122,37 +119,14 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
                 /*====================================
                 Portfolio Isotope Filter
                 ======================================*/
-                var $container = $('.portfolio-items');
-                $container.isotope({
-                    filter: '*',
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear',
-                        queue: false
+                var portfolioInterval = setInterval(function () {
+                    var elements = $('.portfolio-items');
+                    if (elements.length > 0) {
+                        initPortfolio();
+                        clearInterval(portfolioInterval);
                     }
-                });
-                $('.cat a').click(function () {
-                    $('.cat .active').removeClass('active');
-                    $(this).addClass('active');
-                    var selector = $(this).attr('data-filter');
-                    $container.isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 750,
-                            easing: 'linear',
-                            queue: false
-                        }
-                    });
-                    return false;
-                });
+                }, 500); 
 
-
-
-                /*====================================
-                WOW JS
-                ======================================*/
-
-                new WOW().init();
                 //smoothScroll
                 //smoothScroll.init();})
             })
@@ -184,4 +158,38 @@ function addClickEvents() {
             }
         }
     });
+}
+
+function initPortfolio() {
+    var $container = $('.portfolio-items');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    $('.cat a').click(function () {
+        $('.cat .active').removeClass('active');
+        $(this).addClass('active');
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+
+
+
+    /*====================================
+    WOW JS
+    ======================================*/
+
+    new WOW().init();
 }
