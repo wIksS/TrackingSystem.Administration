@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="TrackingSystemApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrackingSystem</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/sb-admin.css" />
+    <link href="Content/Site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">TrackingSystem</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+               
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="admin.html#/Content/Admin"><i class="fa fa-fw fa-table"></i> Administration</a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html#/Content/Admin/Users"><i class="fa fa-fw fa-desktop"></i>Users</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+                <div ng-view></div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+ 
+    <script type="text/javascript" src="Scripts/toastr/toastr.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDSnvVKeDezT-2rPCZU54WLPBNNzMcA25o'></script>
+
+
+    <script src="/Scripts/lodash.underscore.min.js"></script>
+    <script src="/Scripts/angular/angular.js"></script>
+    <script src="/Scripts/jquery/jquery-ui.js"></script>
+
+    <script src="/Scripts/angular/angular-google-maps.min.js"></script>
+    <script src="/Scripts/angular/angular-route.js"></script>
+    <script src="/Scripts/respond.js"></script>
+    <script src="/Scripts/toastr/toastr.js"></script>
+    <!--<script src="/Scripts/rangeslider.js"></script>-->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script src="/js/app.js"></script>
+
+    <script src="js/directives/ngLastRepeat.js"></script>
+    <script src="js/directives/search.js"></script>
+    <script src="js/directives/slider.js"></script>
+
+    <script src="/js/controllers/HomeCtrl.js"></script>
+    <script src="/js/controllers/LoginCtrl.js"></script>
+    <script src="/js/controllers/RegisterCtrl.js"></script>
+    <script src="/js/controllers/RegisterAdminCtrl.js"></script>
+    <script src="/js/controllers/GroupCtrl.js"></script>
+    <script src="/js/controllers/TeacherCtrl.js"></script>
+    <script src="/js/controllers/UsersCtrl.js"></script>
+    <script src="/js/controllers/PathCtrl.js"></script>
+
+    <script src="/js/services/errorHandler.js"></script>
+    <script src="/js/services/httpRequester.js"></script>
+    <script src="/js/services/notifier.js"></script>
+    <script src="/js/services/objectToQueryString.js"></script>
+    <script src="/js/services/account/auth.js"></script>
+    <script src="/js/services/account/identity.js"></script>
+    <script src="/js/services/account/usersService.js"></script>
+    <script src="/js/services/teacher/teacherService.js"></script>
+    <script src="/js/services/group/groupService.js"></script>
+    <script src="/js/services/paths/pathsService.js"></script>
+</body>
+</html>

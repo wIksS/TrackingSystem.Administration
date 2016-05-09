@@ -30,6 +30,10 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
             when('/Content/Admin/:id', {
                 templateUrl: '../Partials/Administration/adminPanel.html',
                 controller: 'LoginCtrl'
+            }).
+            when('/admin', {
+                templateUrl: '../Partials/Administration/adminPanel.html',
+                controller: 'LoginCtrl'
             })
             .otherwise({
                 templateUrl: '../Partials/Home/home.html',

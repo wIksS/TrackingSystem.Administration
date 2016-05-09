@@ -202,14 +202,15 @@ header {
 .color {
     color: #f3ca27;
 }
-.Content{
-    padding-top:0px
+
+.Content {
+    padding-top: 0px;
 }
 
 /* Services Section */
 #teachers {
     padding: 80px 0 100px 0;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#032731+0,032e3a+20,032e3a+100,032731+100 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#032731+0,032e3a+20,032e3a+100,032731+100 */
     background: rgb(3,39,49); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(3,39,49,1) 0%, rgba(3,46,58,1) 20%, rgba(3,46,58,1) 100%, rgba(3,39,49,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(3,39,49,1) 0%, rgba(3,46,58,1) 20%, rgba(3,46,58,1) 100%, rgba(3,39,49,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -250,11 +251,11 @@ header {
     padding: 40px 0;
 }
 
-    #Content i.fa {
-        font-size: 30px;
-        padding: 5px;
-        color: #f1c40f;
-    }
+#Content i.fa {
+    font-size: 30px;
+    padding: 5px;
+    color: #f1c40f;
+}
 
 .categories {
     padding-bottom: 30px;
@@ -454,13 +455,17 @@ ol.type li {
         }
 
 
+.text-primary {
+    color: #1d434e;
+}
+
 .btn-primary {
     color: white;
     background-color: #1d434e;
     border-color: #1d434e;
 }
 
-      .btn-primary:hover, .portfolio-modal .btn-primary:focus, .portfolio-modal .btn-primary.focus, .portfolio-modal .btn-primary:active, .portfolio-modal .btn-primary.active {
+    .btn-primary:hover, .portfolio-modal .btn-primary:focus, .portfolio-modal .btn-primary.focus, .portfolio-modal .btn-primary:active, .portfolio-modal .btn-primary.active {
         color: #a7b6ba;
         background-color: #032e3a;
         border-color: #032e3a;
@@ -755,7 +760,7 @@ img.img-circle.team-img {
 .teachers .thumbnail .caption {
     padding: 9px;
     color: #F2F2F2;
-    text-align:center
+    text-align: center;
 }
 
 .teachers h3 {
@@ -768,7 +773,7 @@ img.img-circle.team-img {
 }
 
 .section-title h2 {
-    text-align:center;
+    text-align: center;
     text-transform: uppercase;
     line-height: 20px;
 }
@@ -797,17 +802,25 @@ img.img-circle.team-img {
     float: left;
     clear: both;
 }
-.teachers .item .thumbnail:hover>img.img-circle.team-img {
-     border: 4px solid #FCAC45; 
-}
-.teachers .item .thumbnail:hover>img.img-circle.team-img {
+
+.teachers .item .thumbnail:hover > img.img-circle.team-img {
     border: 4px solid #FCAC45;
 }
 
-.qr-code{
-    width:90%;
+.teachers .item .thumbnail:hover > img.img-circle.team-img {
+    border: 4px solid #FCAC45;
 }
 
-.app-img{
-    height:600px
+.qr-code {
+    width: 90%;
+}
+
+.app-img {
+    height: 600px;
+}
+
+.modal-custom {
+    /*height:500px;*/
+    width: 100%;
+    position: absolute;
 }

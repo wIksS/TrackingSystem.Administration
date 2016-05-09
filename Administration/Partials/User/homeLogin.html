@@ -1,4 +1,54 @@
-﻿<div class="container">
+﻿<div id="login-overlay" class="modal-custom modal fade" ng-controller="LoginCtrl">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Login to admin panel</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="well">
+                            <form>
+                                <div class="form-group">
+                                    <label for="username" class="control-label">Username</label>
+                                    <input type="text" class="form-control" required="" ng-model="user.username" ng-minlength="3"id="inputUsername" title="Please enter you username" placeholder="example@gmail.com">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Password</label>
+                                    <input type="password" class="form-control"  required="" ng-model="user.password" ng-minlength="4" id="inputPassword"  title="Please enter your password">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" id="remember"> Remember login
+                                    </label>
+                                    <p class="help-block">(if this is a private computer)</p>
+                                </div>
+                                <button type="submit" ng-click="login(user)" class="btn btn-primary btn-block">Login</button>
+                                <a data-dismiss="modal" class="btn btn-default btn-block">Close login</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                        <ul class="list-unstyled" style="line-height: 2">
+                            <li><span class="fa fa-check text-primary"></span> Make account which you can use in the app</li>
+                            <li><span class="fa fa-check text-primary"></span> Fast and easy</li>
+                            <li><span class="fa fa-check text-primary"></span> Safe and secure</li>
+                            <li><span class="fa fa-check text-primary"></span> You need to be admin to use the admin panel</li>
+                        </ul>
+                        <p><a data-target="#register-overlay" data-toggle="modal" data-dismiss="modal" class="btn btn-primary btn-block">Yes please, register now!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container">
     <div class="col-lg-12">
         <div class="col-lg-3"></div>
         <div class="col-lg-6 register-form">
@@ -29,4 +79,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
