@@ -13,7 +13,7 @@
             $location.path('/unathorized');
         }
 
-        $scope.paths = pathsService.getUserLocations($routeParams.id, user.identity)
+        $scope.paths = pathsService.getUserLocations($routeParams.id, user.token)
             .then(function (data) {
                 if (data.length == 0) {
                     $scope.noLocations = true;

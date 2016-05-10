@@ -6,6 +6,9 @@
         $scope.serverImagePath = baseUrl + "/api/file/";
         $scope.isLoading = true;
 
+        $(window).unbind('scroll');
+        $('.navbar-default').addClass('on');
+
         usersService.getUsers(user.token)
             .then(function (data) {
                 $scope.users = data;

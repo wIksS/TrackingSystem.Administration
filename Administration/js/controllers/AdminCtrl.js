@@ -6,6 +6,9 @@ app.controller('AdminCtrl', ['$scope', '$location', '$routeParams', 'auth', 'ide
     $scope.isAdmin = identity.isAdmin();
     $scope.id = $routeParams.id;
 
+    $(window).unbind('scroll');
+    $('.navbar-default').addClass('on');
+
     $scope.$on('$routeChangeStart', function (next, current) {
         $scope.isLogged = identity.isLogged();
         $scope.isAdmin = identity.isAdmin();

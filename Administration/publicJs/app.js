@@ -1,41 +1,6 @@
 'use strict';
 
-var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.
-            when('/', {
-                templateUrl: '../Partials/Home/home.html',
-                controller: 'LoginCtrl'
-            }).
-            when('/Administration', {
-                templateUrl: '../Partials/User/homeLogin.html',
-                controller: 'LoginCtrl'
-            }).
-            when('/Content/Register', {
-                templateUrl: '../Partials/User/register.html',
-                controller: 'RegisterCtrl'
-            }).
-            when('/Content/Admin', {
-                templateUrl: '../Partials/Administration/adminPanel.html',
-                controller: 'LoginCtrl'
-            }).
-            when('/Content/Paths/:id', {
-                templateUrl: '../Partials/Paths/path.html',
-                controller: 'PathCtrl'
-            }).
-            when('/Content/Admin/Users', {
-                templateUrl: '../Partials/Administration/users.html',
-                controller: 'UsersCtrl'
-            }).
-            when('/Content/Admin/:id', {
-                templateUrl: '../Partials/Administration/adminPanel.html',
-                controller: 'LoginCtrl'
-            })
-            .otherwise({
-                templateUrl: '../Partials/Home/home.html',
-                controller: 'LoginCtrl'
-            })
-    }])
+var publicApp = angular.module('TrackingSystemPublicApp', ['ngRoute'])
     .value('toastr', toastr)
     .run(function ($timeout) {
         $(window).load(function () {
@@ -62,9 +27,9 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
                 $(window).bind('scroll', function () {
                     var navHeight = $(window).height() - 100;
                     if ($(window).scrollTop() > navHeight) {
-                        $('.navbar-toggle-on').addClass('on');
+                        $('.navbar-default').addClass('on');
                     } else {
-                        $('.navbar-toggle-on').removeClass('on');
+                        $('.navbar-default').removeClass('on');
                     }
                 });
 

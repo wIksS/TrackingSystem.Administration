@@ -11,6 +11,10 @@ app.controller('LoginCtrl', ['$scope', 'auth', 'identity', 'notifier', '$timeout
         $scope.user = user || {};
         $scope.username = user.username;
 
+        $timeout(function () {
+            $('#login-overlay').modal('show');
+        });
+
         $scope.$on('$routeChangeStart', function (next, current) {
             user = identity.getUser();
 
@@ -32,7 +36,7 @@ app.controller('LoginCtrl', ['$scope', 'auth', 'identity', 'notifier', '$timeout
                         $scope.isAdmin = identity.isAdmin();
                         $scope.isTeacher = identity.isInRole('Teacher');
 
-                        $location.path('#/home');
+                        $location.path('/Content/Admin');
                         $scope.$apply();
                         notifier.success('Successful login !');
                         //initLinksAnimations();
@@ -47,6 +51,7 @@ app.controller('LoginCtrl', ['$scope', 'auth', 'identity', 'notifier', '$timeout
             $location.path('home');
             var user = identity.getUser();
             identity.logoutUser();
+            window.location.reload();
             $scope.isLogged = identity.isLogged();
             $scope.isAdmin = identity.isAdmin();
             $scope.user.username = '';

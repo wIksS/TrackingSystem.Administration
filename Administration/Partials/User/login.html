@@ -1,22 +1,20 @@
-﻿<ul ng-hide="!isLogged" class="nav navbar-nav navbar-right">
-    <li><a href="#home" class="page-scroll">Home</a></li>
-    <li><a href="#teachers" class="page-scroll">Teachers</a></li>
+﻿<ul ng-hide="!isAdmin" class="nav navbar-nav navbar-right">
     <li ng-hide="!isAdmin"><a href="/#/Content/Admin" class="page-scroll">Admin</a></li>
     <li ng-hide="!isAdmin"><a href="/#/Content/Admin/Users" class="page-scroll">Users</a></li>
-    <li><a href="#download-section" class="page-scroll">Download</a></li>
-    <li><a href="#app-section" class="page-scroll">App</a></li>
     <li>
-        <a class="btn btn-primary page-scroll" href="#home" ng-click="logout()">Logout</a>
+        <a class="btn btn-primary" ng-click="logout()">Logout</a>
     </li>
 </ul>
 
-<ul ng-hide="isLogged" class="nav navbar-nav navbar-right">
+<ul ng-hide="isAdmin" class="nav navbar-nav navbar-right">
     <li><a href="#home" class="page-scroll">Home</a></li>
     <li><a href="#teachers" class="page-scroll">Teachers</a></li>
-    <li><a href="/#home" data-target="#login-overlay" data-toggle="modal" class="page-scroll">Login</a></li>
-    <li><a href="/#/Content/Register" class="page-scroll">Register</a></li>
-    <li><a href="#download-section" class="page-scroll">Download</a></li>
     <li><a href="#app-section" class="page-scroll">App</a></li>
+    <li><a href="#download-section" class="page-scroll">Download</a></li>
+    <li><a href="#contact-section" class="page-scroll">Contact us</a></li>
+    <li ng-hide="!isLogged">
+        <a class="btn btn-primary" ng-click="logout()">Logout</a>
+    </li>
 </ul>
 <!--<ul ng-hide="!isLogged" class="nav navbar-nav navbar-right">
     <li>

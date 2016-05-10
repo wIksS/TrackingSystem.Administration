@@ -116,7 +116,6 @@ body {
     font-size: 16px;
     font-weight: 400;
     text-rendering: optimizeLegibility;
-    padding-bottom: 90px;
 }
 
 div.table-title {
@@ -561,4 +560,8 @@ div.table-title {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.admin-content{
+    margin-top:70px;
 }

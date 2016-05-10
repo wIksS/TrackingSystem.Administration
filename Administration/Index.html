@@ -31,7 +31,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
     <link href="Content/Site.css" rel="stylesheet" />
-    <link href="Content/toastr.css" rel="stylesheet"/>
+    <link href="Content/toastr.css" rel="stylesheet" />
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,125 +41,21 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 </head>
-<body>
-    <div ng-include="'Partials/User/homeLogin.html'"></div>
-    <div ng-include="'Partials/User/register.html'"></div>
-
+<body ng-controller="HomeCtrl">
     <div id="preloader">
         <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
     </div>
     <!-- Navigation
         ==========================================-->
-    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="page-scroll navbar-brand" href="#home"><i class="glyphicon glyphicon-map-marker"></i> Tracking<strong></strong></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div ng-controller="LoginCtrl" ng-include="'Partials/User/login.html'" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <div ng-hide="isAdmin" ng-include="'Partials/Navigation/publicNav.html'"></div>
+    <div ng-hide="!isAdmin" ng-include="'Partials/Navigation/adminNav.html'"></div>
 
     <!-- Header -->
-    <header id="home" class="text-center section" name="home">
-        <div class="intro-text">
-            <h1 class="wow fadeInDown">Tracking<strong><span class="color">System</span></strong></h1>
-            <p class="wow fadeInDown">safe travel and excursions</p>
-            <a href="#/teachers" class="btn btn-default btn-lg page-scroll wow fadeInUp" data-wow-delay="200ms">To our site</a>
-        </div>
-    </header>
-
-    <div id="teachers" class="teachers text-center section">
-        <div class="container">
-            <div class="container">
-                <div ng-include="'Partials/Teacher/teachers.html'"></div>
-            </div>
-        </div>
+    <div>
+        <div ng-view></div>
+        <div ng-hide="isAdmin" ng-include="'Partials/Home/public.html'"></div>
     </div>
 
-    <!-- Portfolio Section -->
-    <div id="Content" class="Content text-center">
-        <div ng-view>
-        </div>
-    </div>
-    <!-- About Section -->
-    <div id="download-section" class="">
-        <div class="container">
-            <div class="section-title text-center wow fadeInDown">
-                <h2><strong>Download</strong> app</h2>
-                <hr>
-                <div class="clearfix"></div>
-                <p>Better and safer excursions for your kids or grandparents.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-6 wow fadeInLeft"> <img src="img/about.png" class="img-responsive"> </div>
-                <div class="col-md-6 wow fadeInRight">
-                    <!--<div>
-                        <h4>Apache Cordova</h4>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img height="100px" src="https://cordova.apache.org/static/img/cordova_bot.png" />
-                            </div>
-                            <div class="col-md-8">
-                                <p>Target multiple platforms with one code base</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space"></div>-->
-                    <h4>Scan QR Code</h4>
-                    <p>Scan the QR code with your telephone. The left one is for android and the right for microsoft. Download the .apk file and then install it. After that you can enjoy the app!</p>
-                    <div class="space"></div><div class="list-style">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6 col-xs-12">
-                                <h4 class="text-center">Android</h4>
-                               <img src="img/android.png" class="qr-code"/>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-xs-12">
-                                <h4 class="text-center">Windows Phone</h4>
-                                <img src="img/microsoft.png" class="qr-code" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="app-section" class="text-center">
-        <div class="container">
-            <!-- Container -->
-            <div class="section-title wow fadeInDown">
-                <h2>App <strong>Pictures</strong></h2>
-                <hr>
-                <div class="clearfix"></div>
-                <p>The hybrid mobile application is written using Apache Cordova. It can be runned on any mobile platform.</p>
-            </div>
-            <div class="categories">
-                <ul class="cat">
-                    <li>
-                        <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">All</a></li>
-                            <li><a href="#" data-filter=".teacher">Teacher</a></li>
-                            <li><a href="#" data-filter=".app">Administration</a></li>
-                            <li><a href="#" data-filter=".branding">Authentication</a></li>
-                        </ol>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div ng-include="'Partials/Home/app.html'"></div>           
-        </div>
-    </div>
-    <!-- Portfolio Modals -->
-    <div ng-include="'Partials/Home/modals.html'"></div>
-
-    
-   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -213,5 +109,17 @@
     <script src="/js/services/teacher/teacherService.js"></script>
     <script src="/js/services/group/groupService.js"></script>
     <script src="/js/services/paths/pathsService.js"></script>
+
+    <!--<script src="/publicJs/app.js"></script>
+
+    <script src="/publicJs/ngLastRepeat.js"></script>
+
+    <script src="/publicJs/controllers/TeacherCtrl.js"></script>
+
+    <script src="/publicJs/services/errorHandler.js"></script>
+    <script src="/publicJs/services/httpRequester.js"></script>
+    <script src="/publicJs/services/notifier.js"></script>
+    <script src="/publicJs/services/objectToQueryString.js"></script>
+    <script src="/publicJs/services/teacherService.js"></script>-->
 </body>
 </html>
