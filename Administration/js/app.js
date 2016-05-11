@@ -46,9 +46,18 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
                         addClickEvents();
                         clearInterval(interval);
                     }
-                }, 500);                
+                }, 500);
 
                 $(".section").css('min-height', $(window).height() + "px");
+
+                var sectionInterval = setInterval(function () {
+                    var elements = $('.section');
+                    if (elements.length > 0) {
+                        $(".section").css('min-height', $(window).height() + "px");
+                        clearInterval(sectionInterval);
+                    }
+                }, 500);
+
 
                 // will first fade out the loading animation 
                 $("#status").fadeOut("slow");
