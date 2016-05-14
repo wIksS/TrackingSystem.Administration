@@ -6,9 +6,16 @@
             <a class="page-scroll navbar-brand" href="#home"><i class="glyphicon glyphicon-map-marker"></i> Tracking<strong></strong></a>
         </div>
 
+        <ul ng-hide="!isAdmin" class="nav navbar-nav navbar-right" ng-controller="LoginCtrl">
+            <li ng-hide="!isAdmin"><a href="/#/Content/Admin/Users" class="page-scroll">Users</a></li>
+            <li>
+                <a class="btn btn-primary" ng-click="logout()">Logout</a>
+            </li>
+        </ul>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div ng-include="'Partials/User/login.html'" ng-controller="LoginCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        </div>
+        <!--<div ng-include="'Partials/User/login.html'" ng-controller="LoginCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        </div>-->
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->

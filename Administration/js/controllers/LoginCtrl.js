@@ -35,8 +35,12 @@ app.controller('LoginCtrl', ['$scope', 'auth', 'identity', 'notifier', '$timeout
                         $scope.username = user.username;
                         $scope.isAdmin = identity.isAdmin();
                         $scope.isTeacher = identity.isInRole('Teacher');
-
-                        $location.path('/Content/Admin');
+                        if ($scope.isAdmin) {
+                            $location.path('/Content/Admin/Users');
+                        }
+                        else {
+                            $location.path('/#/home');
+                        }
                         $scope.$apply();
                         notifier.success('Successful login !');
                         //initLinksAnimations();

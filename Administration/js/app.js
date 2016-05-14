@@ -142,7 +142,7 @@ var app = angular.module('TrackingSystemApp', ['google-maps', 'ngRoute'])
         })
 
     })
-    .constant('baseUrl', 'http://trackingsystemserverspringconf.apphb.com/');//'http://qrinformation.apphb.com');//http://qrinfo.apphb.com');//'http://localhost:1763');//'http://localhost:6364');//'http://QRInfoSystem.Web.Web.Web.Webserver.apphb.com/');
+    .constant('baseUrl', 'http://trackingsystemservernoit.apphb.com/');//'http://qrinformation.apphb.com');//http://qrinfo.apphb.com');//'http://localhost:1763');//'http://localhost:6364');//'http://QRInfoSystem.Web.Web.Web.Webserver.apphb.com/');
 
 function addClickEvents() {
     $('a.page-scroll').click(function () {

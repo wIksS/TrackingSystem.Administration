@@ -1,11 +1,4 @@
-﻿<ul ng-hide="!isAdmin" class="nav navbar-nav navbar-right">
-    <li ng-hide="!isAdmin"><a href="/#/Content/Admin" class="page-scroll">Admin</a></li>
-    <li ng-hide="!isAdmin"><a href="/#/Content/Admin/Users" class="page-scroll">Users</a></li>
-    <li>
-        <a class="btn btn-primary" ng-click="logout()">Logout</a>
-    </li>
-</ul>
-
+﻿
 <ul ng-hide="isAdmin" class="nav navbar-nav navbar-right">
     <li><a href="#home" class="page-scroll">Home</a></li>
     <li><a href="#teachers" class="page-scroll">Teachers</a></li>
@@ -16,23 +9,5 @@
         <a class="btn btn-primary" ng-click="logout()">Logout</a>
     </li>
 </ul>
-<!--<ul ng-hide="!isLogged" class="nav navbar-nav navbar-right">
-    <li>
-        <a href="/#/details">Hello, {{username}}</a>
-    </li>
-    <li>
-        <a class="btn btn-primary" ng-click="logout()">Logout</a>
-    </li>
-</ul>-->
-<!--<ul class="nav navbar-nav navbar-right" ng-hide="!isLogged">
-    <li class="active">
-        <a href="/#/teachers">Teachers</a>
-    </li>
-    <li ng-hide="!isAdmin">
-        <a href="#/Content/Admin" class="page-scroll">Admin Panel</a>
-    </li>
-    <li ng-hide="!isAdmin">
-        <a href="#/Content/Admin/Users">Users</a>
-    </li>
-</ul>-->
+
    
