@@ -823,3 +823,15 @@ img.img-circle.team-img {
     width: 100%;
     position: absolute;
 }
+
+list-group {
+    margin-bottom: 0px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: none;
+}
